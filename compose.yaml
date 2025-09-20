@@ -23,6 +23,8 @@ services:
   n8n:
     image: n8n-custom
     restart: always
+    depends_on:
+      - db
     ports:
       - "127.0.0.1:5678:5678"
     labels:
@@ -50,10 +52,13 @@ services:
       - WEBHOOK_URL=https://${SUBDOMAIN}.${DOMAIN_NAME}/
       - GENERIC_TIMEZONE=${GENERIC_TIMEZONE}
       - TZ=${GENERIC_TIMEZONE}
+      - DB_TYPE=postgresdb
+      - DB_POSTGRESDB_HOST=db
+      - DB_POSTGRESDB_PORT=5432
+      - DB_POSTGRESDB_DATABASE=n8n_db
+      - DB_POSTGRESDB_USER=postgres
+      - DB_POSTGRESDB_PASSWORD=postgres
     volumes:
-      - ./.n8n/nodes:/home/node/.n8n/nodes
-      - ./.n8n/config:/home/node/.n8n/config
-      - ./.n8n/database.sqlite:/home/node/.n8n/database.sqlite
       - ./local-files:/files
 
   db:
@@ -70,6 +75,5 @@ services:
       - db_data:/var/lib/postgresql/data
 
 volumes:
-  n8n_data:
   traefik_data:
   db_data:
