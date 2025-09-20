@@ -21,7 +21,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
 
   n8n:
-    image: docker.n8n.io/n8nio/n8n
+    image: n8n-custom
     restart: always
     ports:
       - "127.0.0.1:5678:5678"
@@ -51,9 +51,9 @@ services:
       - GENERIC_TIMEZONE=${GENERIC_TIMEZONE}
       - TZ=${GENERIC_TIMEZONE}
     volumes:
-      - n8n_data:/home/node/.n8n
+      - ./.n8n:/home/node/.n8n
       - ./local-files:/files
-  
+
   db:
     image: postgres:latest
     container_name: n8n_postgres

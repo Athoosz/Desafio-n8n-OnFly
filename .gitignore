@@ -6,3 +6,19 @@ dist
 npm-debug.log*
 yarn.lock
 .vscode/launch.json
+
+logs
+*.log
+yarn-error.log*
+pnpm-debug.log*
+
+# Ignora tudo dentro de .n8n, exceto a pasta custom/Random e seus conteúdos
+.n8n/*
+!.n8n/custom/
+!.n8n/custom/Random/
+!.n8n/custom/Random/**
+.n8n/config
+.n8n/*.json
+.n8n/*.sqlite
+.n8n/*.db
+.n8n/local-files/
