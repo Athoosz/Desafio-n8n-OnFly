@@ -47,6 +47,20 @@ export class Random implements INodeType {
 			const min = this.getNodeParameter('min', i) as number;
 			const max = this.getNodeParameter('max', i) as number;
 
+			if (!Number.isInteger(min) || !Number.isInteger(max)) {
+				return [
+					[
+						{
+							json: {
+								error: 'Min e Max devem ser números inteiros.',
+								min,
+								max,
+							},
+						},
+					],
+				];
+			}
+
 			if (min > max) {
 				return [
 					[
@@ -74,6 +88,8 @@ export class Random implements INodeType {
 						randomNumber: parseInt(response, 10),
 						min,
 						max,
+						source: 'random.org',
+						timestamp: new Date().toISOString(),
 					},
 				});
 			} catch (error) {
