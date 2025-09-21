@@ -61,9 +61,9 @@ services:
     container_name: n8n_postgres
     restart: always
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: n8n_db
+      POSTGRES_USER: ${ENV_DB_USER}
+      POSTGRES_PASSWORD: ${ENV_DB_PASSWORD}
+      POSTGRES_DB: ${ENV_DB_NAME}
     ports:
       - "5432:5432"
     volumes:

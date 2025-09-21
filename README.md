@@ -39,33 +39,33 @@ Antes de iniciar o serviço, é importante configurar as variáveis de ambiente 
 
 O arquivo `.env.example` está presente no projeto como modelo. **⚠☣ O correto é nunca colocar dados sensíveis diretamente no arquivo `.env` do repositório.**
 
-Para configurar, copie o arquivo de exemplo do docs do n8n:
+Para configurar, copie o arquivo `.env.example` e renomeie para `.env`:
 
-```env
-DOMAIN_NAME=localhost.com
-SUBDOMAIN=n8n
-GENERIC_TIMEZONE=America/Sao_Paulo
-SSL_EMAIL=seu-email@exemplo.com
+```bash
+cp .env.example .env
 ```
 
-Preencha os valores conforme sua necessidade:
+Em seguida, edite o arquivo `.env` e preencha os valores conforme sua necessidade:
 
 - `DOMAIN_NAME`: domínio principal para acesso ao n8n (ex: `localhost.com`)
 - `SUBDOMAIN`: subdomínio para acesso ao n8n (ex: `n8n`)
 - `GENERIC_TIMEZONE`: timezone padrão (ex: `America/Sao_Paulo`)
-- `SSL_EMAIL`: e-mail para geração de certificado SSL
+- `SSL_EMAIL`: e-mail para geração de certificado SSL (ex: `seu-email@exemplo.com`)
+- `ENV_DB_USER`: usuário do banco de dados PostgreSQL
+- `ENV_DB_PASSWORD`: senha do banco de dados PostgreSQL  
+- `ENV_DB_NAME`: nome do banco de dados PostgreSQL
 
 ### Banco de Dados
 
-O serviço PostgreSQL é configurado automaticamente pelo Docker Compose:
+O serviço PostgreSQL é configurado automaticamente pelo Docker Compose com as seguintes configurações padrão:
 
-- Usuário: `postgres`
-- Senha: `postgres`
-- Banco: `n8n_db`
+- Usuário: definido em `ENV_DB_USER` no arquivo `.env`
+- Senha: definida em `ENV_DB_PASSWORD` no arquivo `.env`
+- Banco: definido em `ENV_DB_NAME` no arquivo `.env`
 - Porta: `5432`
 
-Essas configurações já estão definidas no arquivo `compose.yaml`.
-O banco é utilizado pelo n8n para salvar workflows, credenciais e dados internos do usuario local.
+Essas configurações já estão definidas no arquivo `compose.yaml` e devem ser preenchidas no seu arquivo `.env` local.
+O banco é utilizado pelo n8n para salvar workflows, credenciais e dados internos do usuário local.
 
 
 
