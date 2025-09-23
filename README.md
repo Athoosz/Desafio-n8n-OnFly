@@ -11,6 +11,7 @@ Este repositório contém um custom node para n8n que gera números aleatórios 
 - [Como Testar (Passo a Passo)](#como-testar-passo-a-passo)
 - [Estrutura do Projeto](#estrutura-do-projeto)
 - [Como Funciona o Node Customizado](#como-funciona-o-node-customizado)
+- [Testes Automatizados](#testes-automatizados)
 
 ## Funcionalidades
 
@@ -114,6 +115,28 @@ Ou, dentro do Docker Desktop, clique no link do n8n disponibilizado.
 2. Configure os parâmetros **Min** e **Max**.
 3. Execute e veja os números aleatórios sendo gerados!
 
+## Testes Automatizados
+
+O projeto inclui testes automatizados para o custom node "Random" usando Jest.
+
+### Como rodar os testes
+
+1. Instale as dependências (se ainda não fez):
+  ```bash
+  npm install
+  ```
+2. Execute os testes:
+  ```bash
+  npm test
+  ```
+
+### O que é testado?
+
+- Validação de parâmetros: erro se `min > max` ou se `min`/`max` não forem numeros inteiros
+- Geração de numero aleatorio dentro do intervalo
+
+> Os testes estão em `.n8n/custom/Random/__tests__/Random.node.test.ts`.
+
 ## Estrutura do Projeto
 
 ```
@@ -121,7 +144,9 @@ Ou, dentro do Docker Desktop, clique no link do n8n disponibilizado.
 │   └── custom/
 │       └── Random/
 │           ├── Random.node.ts     # Código principal do node
-│           └── randomNode.svg     # Ícone do node
+│           ├── randomNode.svg     # Ícone do node
+│           └── __tests__/
+│               └── Random.node.test.ts # Testes automatizados do node
 ├── dist/                          # Arquivos compilados
 ├── Dockerfile                     # Configuração Docker
 ├── compose.yaml                   # Docker Compose
