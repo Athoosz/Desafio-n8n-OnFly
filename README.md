@@ -23,11 +23,11 @@ Este repositório contém um custom node para n8n que gera números aleatórios 
 
 Para testar este node customizado, você precisa ter instalado:
 
-- **Git** – [Download aqui](https://git-scm.com/downloads)
-- **Docker Desktop** – [Download aqui](https://www.docker.com/products/docker-desktop)
-- **Node.js 20+** – [Download aqui](https://nodejs.org/)
-- **npm** – [Download aqui](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
-
+- <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" width="16" height="16"/> **Git** – [Download aqui](https://git-scm.com/downloads)
+- <img src="https://www.docker.com/favicon.ico" width="16" height="16"/> **Docker Desktop** – [Download aqui](https://www.docker.com/products/docker-desktop)
+- <img src="https://nodejs.org/static/images/logo.svg" width="16" height="16"/> **Node.js 20+** – [Download aqui](https://nodejs.org/)
+- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Npm-logo.svg/540px-Npm-logo.svg.png" width="16" height="16"/> **npm** – [Download aqui](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+- <img src="https://www.postgresql.org/media/img/about/press/elephant.png" width="16" height="16"/> **PostgresSQL** - [Download aqui](https://www.postgresql.org/download/)
 
 
 ## Configuração do Ambiente
