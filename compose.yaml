@@ -55,9 +55,9 @@ services:
       - DB_TYPE=postgresdb
       - DB_POSTGRESDB_HOST=db
       - DB_POSTGRESDB_PORT=5432
-      - DB_POSTGRESDB_DATABASE=n8n_db
-      - DB_POSTGRESDB_USER=postgres
-      - DB_POSTGRESDB_PASSWORD=postgres
+      - DB_POSTGRESDB_DATABASE=${ENV_DB_NAME}
+      - DB_POSTGRESDB_USER=${ENV_DB_USER}
+      - DB_POSTGRESDB_PASSWORD=${ENV_DB_PASSWORD}
     volumes:
       - ./local-files:/files
 

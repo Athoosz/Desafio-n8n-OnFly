@@ -53,7 +53,7 @@ Em seguida, edite o arquivo `.env` e preencha os valores conforme sua necessidad
 - `SSL_EMAIL`: e-mail para geração de certificado SSL (ex: `seu-email@exemplo.com`)
 - `ENV_DB_USER`: usuário do banco de dados PostgreSQL
 - `ENV_DB_PASSWORD`: senha do banco de dados PostgreSQL  
-- `ENV_DB_NAME`: nome do banco de dados PostgreSQL
+- `ENV_DB_NAME`: nome do banco de dados PostgreSQL (padrão: `n8n_db`)
 
 ### Banco de Dados
 
@@ -82,10 +82,11 @@ cd Desafio-n8n-OnFly
 npm install
 ```
 
-### 3️⃣ Build Rápida (Para Usuários Windows)
+### 3️⃣ Build Rápida (Para Usuários Windows) - Com docker aberto
 ```powershell
 .\build.ps1
 ```
+> O script `build.ps1` compila o projeto e prepara os arquivos para uso no Docker.
 
 **Ou manualmente:**
 ```bash
@@ -93,7 +94,7 @@ npm run build
 docker build -t n8n-custom .
 ```
 
-### 4️⃣ Inicie o n8n
+### 4️⃣ Inicie o n8n (Com docker aberto)
 ```bash
 docker-compose up -d
 ```

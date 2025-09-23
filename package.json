@@ -16,7 +16,7 @@
     "url": "https://github.com/<...>/n8n-nodes-<...>.git"
   },
   "engines": {
-    "node": ">=20.15"
+    "node": ">=22.0.0"
   },
   "main": "index.js",
   "scripts": {
